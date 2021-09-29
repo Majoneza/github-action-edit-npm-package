@@ -34,19 +34,16 @@ function getDefault(data: MyObject, elem: any, defaulty: any): any {
 function packageJSON(packagejson: MyObject, append: MyObject, set: MyObject, remove: MyObject): void {
     for (const elem in packagejson) {
         if (typeof packagejson[elem] === 'object') {
-            if (elem in append) {
+            if (elem in append && typeof append[elem] !== 'object') {
                 if (Array.isArray(packagejson[elem])) {
                     packagejson[elem].push(append[elem]);
                 }
-                else {
-                    packagejson[elem] = {...packagejson[elem], ...append[elem]};
-                }
             }
-            if (elem in set) {
+            if (elem in set && typeof set[elem] !== 'object') {
                 packagejson[elem] = set[elem];
             }
             let removeBool = false;
-            if (elem in remove) {
+            if (elem in remove && typeof remove[elem] !== 'object') {
                 delete packagejson[elem];
                 removeBool = true;
             }

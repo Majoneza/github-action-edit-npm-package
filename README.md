@@ -24,5 +24,5 @@ This action edits the package.json file.
 ```
 uses: Majoneza/github-action-edit-npm-package@v1
 with:
-  set: '{\"main\":\"index.js\"}'
+  set: '{"main":"index.js"}'
 ```
