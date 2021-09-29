@@ -1,15 +1,4 @@
 "use strict";
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
@@ -104,19 +93,16 @@ function getDefault(data, elem, defaulty) {
 function packageJSON(packagejson, append, set, remove) {
     for (var elem in packagejson) {
         if (typeof packagejson[elem] === 'object') {
-            if (elem in append) {
+            if (elem in append && typeof append[elem] !== 'object') {
                 if (Array.isArray(packagejson[elem])) {
                     packagejson[elem].push(append[elem]);
                 }
-                else {
-                    packagejson[elem] = __assign(__assign({}, packagejson[elem]), append[elem]);
-                }
             }
-            if (elem in set) {
+            if (elem in set && typeof set[elem] !== 'object') {
                 packagejson[elem] = set[elem];
             }
             var removeBool = false;
-            if (elem in remove) {
+            if (elem in remove && typeof remove[elem] !== 'object') {
                 delete packagejson[elem];
                 removeBool = true;
             }
