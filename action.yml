@@ -8,15 +8,15 @@ inputs:
   append:
     description: 'List of values to append to the end of parameter'
     required: true
-    default: '[]'
+    default: '{}'
   set:
     description: 'List of values to set'
     required: true
-    default: '[]'
+    default: '{}'
   remove:
     description: 'List of values to remove'
     required: true
-    default: '[]'
+    default: '{}'
 runs:
     using: 'node12'
     main: './build/index.js'

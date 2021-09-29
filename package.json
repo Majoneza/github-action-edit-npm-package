@@ -2,8 +2,9 @@
   "name": "github-action-edit-npm-package",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./build/index.js",
   "scripts": {
+    "build-start": "npm run build && node .",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

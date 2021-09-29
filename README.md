@@ -10,15 +10,15 @@ This action edits the package.json file.
 
 ### `append`
 
-**Required** List of values(in JSON formatted string) to append to the end of parameter. Default `[]`.
+**Required** List of values(in JSON formatted string) to append to the end of parameter. Default `{}`.
 
 ### `set`
 
-**Required** List of values(in JSON formatted string) to set. Default `[]`.
+**Required** List of values(in JSON formatted string) to set. Default `{}`.
 
 ### `remove`
 
-**Required** List of values(in JSON formatted string) to remove. Default `[]`.
+**Required** List of values(in JSON formatted string) to remove. Default `{}`.
 
 ## Example usage
 ```
