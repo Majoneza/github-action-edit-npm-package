@@ -1,0 +1,22 @@
+name: 'Edit npm package'
+description: 'Edit parameters of npm package.json'
+inputs:
+  package-path:
+    description: 'Package.json path from the root'
+    required: true
+    default: './'
+  append:
+    description: 'List of values to append to the end of parameter'
+    required: true
+    default: '[]'
+  set:
+    description: 'List of values to set'
+    required: true
+    default: '[]'
+  remove:
+    description: 'List of values to remove'
+    required: true
+    default: '[]'
+runs:
+    using: 'node12'
+    main: './build/index.js'
